@@ -1,11 +1,12 @@
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://cdn.jsdelivr.net/gh/andywang425/BLTH@7d7ca494edd314806460e24c6b59be8ae1bd7dc6/img/script-icon.png"></p>
-<p><img src="https://img.shields.io/badge/TamperMonkey_4.10-pass-green.svg" alt="TamperMonkey 4.10"> <img src="https://img.shields.io/badge/Chromium_83-pass-green.svg" alt="Chromium 83"> <img src="https://img.shields.io/badge/Firefox_77-pass-green.svg" alt="Firefox 77">&nbsp;<img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">&nbsp;<img src="https://img.shields.io/github/stars/andywang425/Bilibili-SGTH?style=social" alt=""></p>
-
-# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BLTH - B站直播间挂机助手
+<p><img src="https://cdn.jsdelivr.net/gh/andywang425/BLTH@7d7ca494edd314806460e24c6b59be8ae1bd7dc6/img/script-icon.png"><h1>B站直播间挂机助手</h1></p>
+<p><img src="https://img.shields.io/badge/TamperMonkey_4.10-pass-green.svg" alt="TamperMonkey 4.10"> <img src="https://img.shields.io/badge/Chromium_83-pass-green.svg" alt="Chromium 83"> <img src="https://img.shields.io/badge/Firefox_77-pass-green.svg" alt="Firefox 77"> <a href="https://github.com/andywang425/BLTH/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"></p>
+<p><img src="https://palerock.cn/node-service/images/greasyfork/views-info/406048" alt="Total Views"> <img src="https://palerock.cn/node-service/images/greasyfork/stats/total-installs/406048" alt="Total Installs"> <img src="https://palerock.cn/node-service/images/greasyfork/stats/daily-installs/406048" alt="Daily Installs"> <img src="https://palerock.cn/node-service/images/greasyfork/stats/daily-updates/406048" alt="Daily Updates"> <img src="https://palerock.cn/node-service/images/greasyfork/info/good_ratings/406048?name=%E5%A5%BD%E8%AF%84&amp;rcolor=darkcyan" alt="Good Ratings"> <img src="https://palerock.cn/node-service/images/greasyfork/info/fan_score/406048?name=%E5%BE%97%E5%88%86&amp;rcolor=orange" alt="Rating"></p>
+<p><a href="https://jq.qq.com/?_wv=1027&k=fCSfWf1O"><img src="https://img.shields.io/badge/QQ%20Group-1106094437(已满)-yellow" alt="QQ Group"></a> <a href="https://jq.qq.com/?_wv=1027&k=Bf951teI"><img src="https://img.shields.io/badge/QQ%20Group-907502444-brightgreen" alt="QQ Group"></a></p>
 
 -------------------------------
 ### github项目地址
 [github.com/andywang425/BLTH](https://github.com/andywang425/BLTH)
+&nbsp;<a href="https://github.com/andywang425/BLTH/stargazers"><img src="https://img.shields.io/github/stars/andywang425/BLTH?style=flat" alt="Github stars"></a> <a href="https://github.com/andywang425/BLTH/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/andywang425/BLTH"></a>
 
 ### 使用方法 
 在[Tampermonkey](https://www.tampermonkey.net/)中启用脚本，登陆bilibili后打开任意b站直播间。 
@@ -16,7 +17,7 @@
 + 初次使用时若出现看不到控制面板的情况，请等待一会或尝试刷新(`shift+F5`)页面。  
 + 部分设置更改后需要刷新页面才能生效。  
 + 使用前建议先关闭广告拦截插件，并确认相关浏览器设置(如cookie权限，脚本拦截)否则该脚本可能无法正常运行。  
-+ 建议通过修改浏览器设置缩减或不发送Referer。
++ 修改浏览器设置缩减或不发送Referer。
   <details>
   <summary>点击展开具体方法</summary>
 
@@ -32,8 +33,6 @@
   某些网站为了防盗链要求referer必须为本站链接，不发送referer可能导致无法正常访问这些网站。同时不发送referer还可能会影响网站的广告收入。
   
   </details>
-
-交流qq群:[1106094437](https://jq.qq.com/?_wv=1027&k=fCSfWf1O)（入群问题答案：B站直播间挂机助手），欢迎进来聊天或者提点建议~    
 
 -------------------------------
 
@@ -62,6 +61,7 @@
 <ul>
 <li>忽略所需金瓜子大于设置值的天选</li>  
 <li>忽略含特定关键字或匹配特定正则表达式的存疑天选</li>
+<li>忽略指定直播间的天选</li>
 <li>尝试识别天选中的金额并忽略金额低于设置值的天选</li>
 <li>保存当前关注列表为白名单/取关不在白名单内的UP主</li>  
 <li>上传天选信息至自己的直播间/从特定直播间获取天选信息</li>
@@ -85,6 +85,8 @@
 <li>移除2233模型</li>
 <li>移除活动入口</li>
 <li>移除排行榜</li>
+<li>移除右侧关注按钮及弹窗</li>
+<li>移除礼物栏下方广告</li>
 <li>屏蔽挂机检测</li>
 </ul>
 </details>
@@ -104,9 +106,28 @@
 ## 说明
 #### 脚本代码格式
 本脚本在三个平台上的代码格式有所不同
-+ github: 压缩和原格式都有
-+ openuserjs: 原格式
-+ greasyfork: 原格式
+<table>
+    <tr>
+        <td align ="center">平台 / 格式</td>
+        <td align ="center">原格式</td>
+        <td align ="center">压缩</td>
+    </tr>
+    <tr>
+        <td align ="center">github</td>
+        <td align ="center">✔</td>
+        <td align ="center">✔</td>
+    </tr>
+    <tr>
+        <td align ="center">greasyfork</td>
+        <td align ="center">✔</td>
+        <td align ="center">/</td>
+    </tr>
+    <tr>
+        <td align ="center">openuserjs</td>
+        <td align ="center">✔</td>
+        <td align ="center">/</td>
+    </tr>
+</table>
 
 注：项目文件中的[B站直播间挂机助手.user.js](https://github.com/andywang425/BLTH/blob/master/B%E7%AB%99%E7%9B%B4%E6%92%AD%E9%97%B4%E6%8C%82%E6%9C%BA%E5%8A%A9%E6%89%8B.user.js)是压缩后的脚本。  
 原格式的脚本为[B站直播间挂机助手.js](https://github.com/andywang425/BLTH/blob/master/B%E7%AB%99%E7%9B%B4%E6%92%AD%E9%97%B4%E6%8C%82%E6%9C%BA%E5%8A%A9%E6%89%8B.js)。  
@@ -119,10 +140,17 @@
 + 脚本默认关闭控制台日志。勾选控制面板上的`其他设置 - 控制台日志`即可开启。  
   打开控制台在Filter中输入`IGIFTMSG`即可过滤出本脚本的日志。
 
+#### 风控
++ 若出现`...，请检查网络`的红色日志，有两种可能。一是网络状况不佳，二被B站风控了。
++ 风控过一段时间会自动解除。
++ 因为风控是针对ip地址的，被风控后可通过挂代理等方式更换ip，继续正常使用脚本。
++ 被风控通常是因为api请求过于频繁，可通过修改脚本的相关设置（如果有的话）降低请求频率。
+
 #### 关于反馈
 + 如果使用脚本过程中遇到问题，可以先按上述步骤开启控制台日志，然后再次运行脚本并在控制台中寻找相关错误信息。  
   若能找到请在反馈bug时附上这些控制台日志。
 + 反馈bug前请先阅读[bug_report.md](https://github.com/andywang425/BLTH/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)。
++ 交流qq群：①群：[1106094437(已满)](https://jq.qq.com/?_wv=1027&k=fCSfWf1O)，②群：[907502444](https://jq.qq.com/?_wv=1027&k=Bf951teI)。欢迎进来聊天或者提点建议~    
 
 -------------------------------
 
@@ -134,7 +162,9 @@
 -------------------------------
 
 ## 许可证  
-<a href = "https://github.com/andywang425/BLTH/blob/master/LICENSE" style="font-size: 1.1em;">MIT License</a>
+该脚本以`MIT`许可证开源。  
+
+<a href="https://github.com/andywang425/BLTH/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/andywang425/BLTH?style=for-the-badge"></a>
 
 -------------------------------
 
@@ -167,4 +197,4 @@
 -------------------------------
 
 ## 更新日志
-完整更新日志见[update-log.md](https://github.com/andywang425/BLTH/blob/master/update-log.md)。  
+完整更新日志见[update-log.md](https://github.com/andywang425/BLTH/blob/master/markdown/update-log.md)。  

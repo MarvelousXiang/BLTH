@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          BilibiliAPI_mod
 // @namespace     https://github.com/SeaLoong
-// @version       2.0.5
+// @version       2.0.6
 // @description   BilibiliAPI，PC端抓包研究所得，原作者是SeaLoong。我在此基础上补充新的API。
 // @author        SeaLoong, andywang425
 // @require       https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
@@ -814,6 +814,16 @@ var BilibiliAPI = {
                     platform: platform
                 }
             });
+        },
+        myWallet: (need_bp = 1, need_metal = 1, platform = 'pc') => {
+            return BilibiliAPI.ajax({
+                url: 'pay/v2/Pay/myWallet',
+                data: {
+                    need_bp: need_bp,
+                    need_metal: need_metal,
+                    platform: platform
+                }
+            })
         }
     },
     rankdb: {
@@ -1613,7 +1623,22 @@ var BilibiliAPI = {
 
             }
         });
-    },//发私信
+    },
+    /**
+     * 发私信
+     * @param
+        { 
+            {
+                sender_uid: number,
+                receiver_id: number,
+                receiver_type: number,
+                msg_type: number,
+                msg_status: number,
+                content: object,
+                dev_id: string
+            }
+        } msg
+    */
     sendMsg: (msg, build = 0, mobi_app = 'web') => {
         return BilibiliAPI.ajaxWithCommonArgs({
             method: 'POST',
@@ -1632,17 +1657,6 @@ var BilibiliAPI = {
             }
         });
     },
-    /*样例
-    var msg = {
-        sender_uid: 358483030,
-        receiver_id: 588780270,
-        receiver_type: 1,
-        msg_type: 1,
-        msg_status: 0,
-        content: `{"content":"测试"}`,
-        dev_id: '372778FD-E359-461D-86A3-EA2BCC6FF52A'
-    }
-    */
     /**
     * 获取cookie
     * @param name
