@@ -1,5 +1,5 @@
 <p><img src="https://cdn.jsdelivr.net/gh/andywang425/BLTH@7d7ca494edd314806460e24c6b59be8ae1bd7dc6/img/script-icon.png"><h1>B站直播间挂机助手</h1></p>
-<p><img src="https://img.shields.io/badge/TamperMonkey_4.10-pass-green.svg" alt="TamperMonkey 4.10"> <img src="https://img.shields.io/badge/Chromium_83-pass-green.svg" alt="Chromium 83"> <img src="https://img.shields.io/badge/Firefox_77-pass-green.svg" alt="Firefox 77"> <a href="https://github.com/andywang425/BLTH/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"></p>
+<p><img src="https://img.shields.io/badge/TamperMonkey_4.10-pass-green.svg" alt="TamperMonkey 4.10"> <img src="https://img.shields.io/badge/Chromium_83-pass-green.svg" alt="Chromium 83"> <img src="https://img.shields.io/badge/Firefox_77-pass-green.svg" alt="Firefox 77"> <a href="https://github.com/andywang425/BLTH/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"></a></p>
 <p><img src="https://palerock.cn/node-service/images/greasyfork/views-info/406048" alt="Total Views"> <img src="https://palerock.cn/node-service/images/greasyfork/stats/total-installs/406048" alt="Total Installs"> <img src="https://palerock.cn/node-service/images/greasyfork/stats/daily-installs/406048" alt="Daily Installs"> <img src="https://palerock.cn/node-service/images/greasyfork/stats/daily-updates/406048" alt="Daily Updates"> <img src="https://palerock.cn/node-service/images/greasyfork/info/good_ratings/406048?name=%E5%A5%BD%E8%AF%84&amp;rcolor=darkcyan" alt="Good Ratings"> <img src="https://palerock.cn/node-service/images/greasyfork/info/fan_score/406048?name=%E5%BE%97%E5%88%86&amp;rcolor=orange" alt="Rating"></p>
 <p><a href="https://jq.qq.com/?_wv=1027&k=fCSfWf1O"><img src="https://img.shields.io/badge/QQ%20Group-1106094437(已满)-yellow" alt="QQ Group"></a> <a href="https://jq.qq.com/?_wv=1027&k=Bf951teI"><img src="https://img.shields.io/badge/QQ%20Group-907502444-brightgreen" alt="QQ Group"></a></p>
 
@@ -24,7 +24,8 @@
   + Chrome  
   在地址栏输入`chrome://flags`，搜索`Reduce default 'referer' header granularity`将这个功能设置为`Enabled`。
   + Edge  
-  在地址栏输入`edge://flags`，搜索`Reduce default 'referer' header granularity`将这个功能设置为`Enabled`。
+  安装浏览器拓展[Referer Control](https://chrome.google.com/webstore/detail/referer-control/hnkcfpcejkafcihlgbojoidoihckciin)，在设置页面中找到`default referer for all other sites`，选择`Custom` - `target host`或`Block`。  
+  若无法科学上网可进Q群下载群文件中的crx文件，在浏览器地址栏输入`chrome://extensions/`，打开右上角的`开发者模式`，把crx文件拖进去安装。
   + FireFox   
   在地址栏输入`about:config`，搜索`network.http.sendRefererHeader`，把这个设置的值改为`0`。
   + 建议这样做的原因：
@@ -138,7 +139,7 @@
 #### 运行日志
 + 普通的日志可以点击聊天区上方，大航海右侧的【日志】查看。
 + 脚本默认关闭控制台日志。勾选控制面板上的`其他设置 - 控制台日志`即可开启。  
-  打开控制台在Filter中输入`IGIFTMSG`即可过滤出本脚本的日志。
+  打开控制台(`ctrl + shift + i`)在Filter中输入`IGIFTMSG`即可过滤出本脚本的日志。
 
 #### 风控
 + 若出现`...，请检查网络`的红色日志，有两种可能。一是网络状况不佳，二被B站风控了。

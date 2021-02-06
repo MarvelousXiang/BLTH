@@ -27,7 +27,8 @@
   + Chrome  
   在地址栏输入`chrome://flags`，搜索`Reduce default 'referer' header granularity`将这个功能设置为`Enabled`。
   + Edge  
-  在地址栏输入`edge://flags`，搜索`Reduce default 'referer' header granularity`将这个功能设置为`Enabled`。
+  安装浏览器拓展[Referer Control](https://chrome.google.com/webstore/detail/referer-control/hnkcfpcejkafcihlgbojoidoihckciin)，在设置页面中找到`default referer for all other sites`，选择`Custom` - `target host`或`Block`。  
+  若无法科学上网可进Q群下载群文件中的crx文件，在浏览器地址栏输入`chrome://extensions/`，打开右上角的`开发者模式`，把crx文件拖进去安装。
   + FireFox   
   在地址栏输入`about:config`，搜索`network.http.sendRefererHeader`，把这个设置的值改为`0`。
   + 建议这样做的原因：
@@ -141,7 +142,7 @@
 #### 运行日志
 + 可以点击聊天区上方，大航海右侧的【日志】查看普通日志。部分日志上会有可点击的蓝色链接文字，方便用户进行某些操作。
 + 脚本默认关闭控制台日志。勾选控制面板上的`其他设置 - 控制台日志`即可开启。  
-  打开控制台在Filter中输入`IGIFTMSG`即可过滤出本脚本的日志。
+  打开控制台(`ctrl + shift + i`)在Filter中输入`IGIFTMSG`即可过滤出本脚本的日志。
 
 #### 风控
 + 若出现`...，请检查网络`的红色日志，有两种可能。一是网络状况不佳，二是被B站风控了。
@@ -173,7 +174,7 @@
 
 ## 其它信息  
 这个项目的部分代码来源于以下几个项目:  
-+ [B站直播签到助手](https://greasyfork.org/zh-CN/scripts/381907-b%E7%AB%99%E7%9B%B4%E6%92%AD%E7%AD%BE%E5%88%B0%E5%8A%A9%E6%89%8B) (MIT) by [十六夜](https://greasyfork.org/en/users/289469-%E5%8D%81%E5%85%AD%E5%A4%9C)
++ [B站直播签到助手](https://wwa.lanzous.com/iLjOmkfuvxe) (MIT) by [十六夜](https://space.bilibili.com/4317450)
 + [BLRHH](https://github.com/SeaLoong/BLRHH) (MIT) by [SeaLoong](https://github.com/SeaLoong)  
 + [Bilibili-LRHH](https://github.com/pjy612/Bilibili-LRHH) (MIT, _forked from SeaLoong/BLRHH_) by [pjy612](https://github.com/pjy612)
 + [TampermonkeyJS](https://github.com/lzghzr/TampermonkeyJS) (MIT) by [lzghzr](https://github.com/lzghzr)  
@@ -200,7 +201,7 @@
 -------------------------------
 
 ## 更新日志
->### 5.6.4.4
->1.修复播放器进入全屏/退出全屏时产生的一些小问题。2.修复点击【取关该分组内的UP主】后出错的bug。3.修复定时休眠的bug。
+>### 5.6.5
+>1.取关BLTH关注分组内up时不再取关白名单内up。2.修复控制面板隐藏后依然碰不到音量按钮的bug。3.部分重构（主要是天选时刻部分）。4.修复在带有iframe的直播间运行脚本时重复运行检测出错的bug。5.如果开启控制台日志，右上角提示信息内容会输出在控制台中。6.天选时刻支持多种数据获取方式并存，并新增一种方式【从已关注且正在直播的直播间获取天选时刻数据 】。
 
 完整更新日志见[update-log.md](https://github.com/andywang425/BLTH/blob/master/markdown/update-log.md)。  
